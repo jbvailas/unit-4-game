@@ -27,7 +27,7 @@ var crystal = {
 
 var currentScore = 0;
 var targetScore = 0;
-var winsCount = 0;
+var winCount = 0;
 var lossCount = 0;
 
 
@@ -54,10 +54,10 @@ var startGame = function(){
 }
 
 
-
 var addValues = function(crystal) {
 
     currentScore = currentScore + crystal.value;
+    
     $("#yourScore").html(currentScore);
 
     checkWin();
@@ -71,16 +71,18 @@ var checkWin = function() {
         console.log("YOU LOSE!");
 
         lossCount++;
+        
         $("#lossCount").html(lossCount);
 
         startGame();
     }
 
-    else if (currentScore == targetScore) {
+    else if (currentScore === targetScore) {
         alert("WINNER...WINNER...CHICKEN...DINNER!!!")
         console.log("WINNER...WINNER...CHICKEN...DINNER!!!");
 
         winCount++;
+        
         $("#winCount").html(winCount);
 
         startGame();
